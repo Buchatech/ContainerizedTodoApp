@@ -1,21 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todoapp
+  creationTimestamp: null
   labels:
     app: todoapp
+  name: todoapp
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: todoapp
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: todoapp
     spec:
       containers:
-        - name: todoapp
-          image: todoapp
-          ports:
-            - containerPort: 80
+      - image: craks1210ayyagi3sofrye.azurecr.io/todoapp
+        name: todoapp
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
