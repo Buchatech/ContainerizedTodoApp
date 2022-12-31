@@ -1,11 +1,6 @@
-FROM node:10
-ENV PORT 80
-EXPOSE 80
-
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY package.json .
-RUN npm install
-COPY . .
-
-CMD ["npm", "start"]
+## Dockerfile
+From nginx:latest
+ENV PORT 8080
+EXPOSE 8080
+COPY index.html /usr/share/nginx/html
+COPY todo.js /usr/share/nginx/html
