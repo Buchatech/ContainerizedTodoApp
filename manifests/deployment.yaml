@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jstodo-41223-test-run1
+  labels:
+    app: jstodo-41223-test-run1
+  namespace: jstodo-41223-test-run1-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jstodo-41223-test-run1
+  template:
+    metadata:
+      labels:
+        app: jstodo-41223-test-run1
+    spec:
+      containers:
+        - name: jstodo-41223-test-run1
+          image: jokesapiv241023run2arc.azurecr.io/jstodo-41223-test-run1:latest
+          ports:
+            - containerPort: 80
